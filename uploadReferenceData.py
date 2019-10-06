@@ -1,18 +1,21 @@
 import requests
 
-url = "https://www.gocanvas.com/apiv2/reference_datas"
-username = "<username>"
-password= "<password>"
+url = "https://www.gocanvas.com/apiv2/reference_datas" # Reference Data API URL
+username = "<username>" # GoCanvas username
+password= "<password>" # GoCanvas password
 
+# Set headers used in POST request
 headers={
-    "Authorization":"<API Key>",
+    "Authorization":"<API Key>", # GoCanvas API Key
 }
 
+# Set parameters used in POST request
 params={
     "username":username,
     "password":password,
 }
 
+# Define a reference data file to upload
 data="""
 <?xml version="1.0" encoding="utf-8"?>
 <List Name="Test API Upload" Action="Update">
@@ -24,5 +27,8 @@ data="""
 </List>
 """
 
+# Submit POST request
 r = requests.post(url, params=params, headers=headers, data=data)
+
+# Print result
 print(r.text)
