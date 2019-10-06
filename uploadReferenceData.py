@@ -1,6 +1,4 @@
 import requests
-from requests.auth import HTTPDigestAuth
-import json
 
 url = "https://www.gocanvas.com/apiv2/reference_datas"
 username = "<username>"
